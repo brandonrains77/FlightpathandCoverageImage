@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Maui;assembly=Esri.ArcGISRuntime.Maui"
+             x:Class="newRandomMapImage.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <esri:MapView x:Name="MyMapView" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="LoadPathButton" Text="Load Path" Clicked="LoadPathButton_Clicked" HorizontalOptions="Start" VerticalOptions="End" Margin="10" Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="LoadCoverageButton" Text="Load Coverage" Clicked="LoadCoverageButton_Clicked" HorizontalOptions="Start" VerticalOptions="End" Margin="10" Grid.Row="2" Grid.Column="0"/>
+        <Button x:Name="RandomLocationButton" Text="Go to Random Location" Clicked="RandomLocationButton_Clicked" HorizontalOptions="End" VerticalOptions="End" Margin="10" Grid.Row="1" Grid.Column="1"/>
+
+        <Button x:Name="SaveImageButton" Text="Save Image" Clicked="SaveImageButton_Clicked" HorizontalOptions="End" VerticalOptions="End" Margin="10" Grid.Row="2" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
