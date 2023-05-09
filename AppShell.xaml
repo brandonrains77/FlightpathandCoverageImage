@@ -7,7 +7,7 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Flight and Coverage Map App"
+        Title="Flight and Coverage Map"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
