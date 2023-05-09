@@ -1,4 +1,4 @@
-﻿namespace newRandomMapImage;
+﻿namespace FlightpathandCoverageImage;
 
 public partial class AppShell : Shell
 {

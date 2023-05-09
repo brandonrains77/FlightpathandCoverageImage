@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace newRandomMapImage;
+namespace FlightpathandCoverageImage;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

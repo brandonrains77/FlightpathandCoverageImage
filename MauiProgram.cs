@@ -1,6 +1,6 @@
 ﻿using Esri.ArcGISRuntime.Maui;
 
-namespace newRandomMapImage;
+namespace FlightpathandCoverageImage;
 
 public static class MauiProgram
 {

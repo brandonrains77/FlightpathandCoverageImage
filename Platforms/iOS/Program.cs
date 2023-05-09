@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace newRandomMapImage;
+namespace FlightpathandCoverageImage;
 
 public class Program
 {

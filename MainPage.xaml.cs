@@ -11,7 +11,7 @@ using System;
 using System.Runtime.InteropServices;
 using Map = Esri.ArcGISRuntime.Mapping.Map;
 
-namespace newRandomMapImage
+namespace FlightpathandCoverageImage
 {
     public partial class MainPage : ContentPage
     {

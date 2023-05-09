@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace newRandomMapImage;
+namespace FlightpathandCoverageImage;
 
 [Application]
 public class MainApplication : MauiApplication
