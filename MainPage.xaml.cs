@@ -29,30 +29,27 @@ namespace FlightpathandCoverageImage
         {
             Console.WriteLine("Button clicked.");
 
-            // Generate random latitude and longitude values.
             double latitude = random.NextDouble() * 180 - 90;
             double longitude = random.NextDouble() * 360 - 180;
 
-            // Generate random logarithmic scale.
             double minScaleLog = Math.Log10(50000);  // Logarithm (base 10) of minimum scale
             double maxScaleLog = Math.Log10(50000000);  // Logarithm (base 10) of maximum scale
             double scaleLog = random.NextDouble() * (maxScaleLog - minScaleLog) + minScaleLog;
             double scale = Math.Pow(10, scaleLog);  // Convert logarithmic scale back to regular scale
 
-            // Output the chosen scale to the console
             Console.WriteLine($"Chosen scale: {scale}");
 
             // Create a MapPoint with the random location.
             MapPoint mapPoint = new MapPoint(longitude, latitude, SpatialReferences.Wgs84);
 
-            // First, set the MapView's viewpoint to a large scale to zoom out.
+            // Set the MapView's viewpoint to a large scale to zoom out.
             Viewpoint viewpointZoomOut = new Viewpoint(mapPoint, 50000000);
             await MyMapView.SetViewpointAsync(viewpointZoomOut, TimeSpan.FromSeconds(1));
 
-            // Then, create a Viewpoint with the MapPoint and the random scale.
+            // Create a Viewpoint with the MapPoint and the random scale.
             Viewpoint viewpointZoomIn = new Viewpoint(mapPoint, scale);
 
-            // Finally, set the MapView's viewpoint to the new random Viewpoint to zoom in.
+            // Set the MapView's viewpoint to the new random Viewpoint to zoom in.
             await MyMapView.SetViewpointAsync(viewpointZoomIn, TimeSpan.FromSeconds(1));
         }
 
@@ -61,11 +58,9 @@ namespace FlightpathandCoverageImage
             RuntimeImage runtimeImage = await MyMapView.ExportImageAsync();
             var imageDataStream = await runtimeImage.GetRawBufferAsync();
 
-            // Read the Stream into a byte array
             byte[] imageData = new byte[imageDataStream.Length];
             await imageDataStream.ReadAsync(imageData, 0, imageData.Length);
 
-            // Getting image width and height
             var imageWidth = runtimeImage.Width;
             var imageHeight = runtimeImage.Height;
 
