@@ -32,8 +32,8 @@ namespace FlightpathandCoverageImage
             double latitude = random.NextDouble() * 180 - 90;
             double longitude = random.NextDouble() * 360 - 180;
 
-            double minScaleLog = Math.Log10(50000);  // Logarithm (base 10) of minimum scale
-            double maxScaleLog = Math.Log10(50000000);  // Logarithm (base 10) of maximum scale
+            double minScaleLog = Math.Log10(50000);  
+            double maxScaleLog = Math.Log10(50000000);  
             double scaleLog = random.NextDouble() * (maxScaleLog - minScaleLog) + minScaleLog;
             double scale = Math.Pow(10, scaleLog);  // Convert logarithmic scale back to regular scale
 
@@ -135,12 +135,12 @@ namespace FlightpathandCoverageImage
         private async Task<FileResult> PickKmlFile()
         {
             var kmlFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-    {
-        { DevicePlatform.iOS, new[] { "org.opengis.kml" } },
-        { DevicePlatform.Android, new[] { "application/vnd.google-earth.kml+xml" } },
-        { DevicePlatform.WinUI, new[] { ".kml" } },
-        { DevicePlatform.macOS, new[] { "kml" } }
-    });
+            {
+                { DevicePlatform.iOS, new[] { "org.opengis.kml" } },
+                { DevicePlatform.Android, new[] { "application/vnd.google-earth.kml+xml" } },
+                { DevicePlatform.WinUI, new[] { ".kml" } },
+                { DevicePlatform.macOS, new[] { "kml" } }
+            });
 
             var options = new PickOptions
             {
